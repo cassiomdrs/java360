@@ -2,49 +2,34 @@ public class AlgoritmoQuatro {
     
     void main () {
         
-        int mes = Integer.parseInt(IO.readln("Digite e mês atual do 1 ao 12: "));
-        IO.println("O mês atual é: " + mes);
+        int week = Integer.parseInt(IO.readln("Digite o dia da semana atual do 1 ao 7: "));
+        IO.println("O dia da semana atual é: " + week);
         
-        switch (mes) {
+        switch (week) {
             case 1:
-                IO.println("Janeiro");
+                IO.println("Domingo");
                 break;
             case 2:
-                IO.println("Fevereiro");
+                IO.println("Segunda-feira");
                 break;
             case 3:
-                IO.println("Março");
+                IO.println("Terça-feira");
                 break;
             case 4:
-                IO.println("Abril");
+                IO.println("Quarta-feira");
                 break;
             case 5:
-                IO.println("Maio");
+                IO.println("Quinta-feira");
                 break;
             case 6:
-                IO.println("Junho");
+                IO.println("Sexta-feira");
                 break;
             case 7:
-                IO.println("Julho");
-                break;
-            case 8:
-                IO.println("Agosto");
-                break;
-            case 9:
-                IO.println("Setembro");
-                break;
-            case 10:
-                IO.println("Outubro");
-                break;
-            case 11:
-                IO.println("Novembro");
-                break;
-            case 12:
-                IO.println("Dezembro");
+                IO.println("Sábado");
                 break;
         
             default:
-                IO.println("Mês inválido!");
+                IO.println("Dia da semana inválido!");
                 break;
         }
 
