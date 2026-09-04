@@ -1,4 +1,4 @@
-public class AlgoritmoSete {
+public class AlgoritmoSeteAl {
     void main () {
         IO.println("Vamos somar dois números inteiros!\n");
 
