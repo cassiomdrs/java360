@@ -1,4 +1,4 @@
-public class AlgoritmoVinteEsete {
+public class AlgoritmoVinteEseteAl {
     public void main () {
         int[] numeros = new int[5];
 
