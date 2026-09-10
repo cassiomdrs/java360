@@ -1,4 +1,4 @@
-public class AlgoritmoVinteEdois {
+public class AlgoritmoVinteEdoisAl {
     public void main () {
         String usuario = "senai";
         String senha = "123";

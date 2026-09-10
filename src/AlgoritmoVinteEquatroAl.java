@@ -1,4 +1,4 @@
-public class AlgoritmoVinteEquatro {
+public class AlgoritmoVinteEquatroAl {
     public void main () {
         int[] numeros = new int[5];
 

@@ -1,4 +1,4 @@
-public class AlgoritmoVinteEseis {
+public class AlgoritmoVinteEseisAl {
     public void main () {
         int[] numeros = new int[5];
         int soma = 0;

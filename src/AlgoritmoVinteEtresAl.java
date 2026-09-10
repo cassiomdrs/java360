@@ -1,4 +1,4 @@
-public class AlgoritmoVinteEtres {
+public class AlgoritmoVinteEtresAl {
     public void main () {
         IO.println("*** PREENCHIMENTO DE VARIÁVEIS SIMPLES ***");
 

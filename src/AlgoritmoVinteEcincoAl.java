@@ -1,4 +1,4 @@
-public class AlgoritmoVinteEcinco {
+public class AlgoritmoVinteEcincoAl {
     public void main () {
         int[] numeros = new int[5];
 
