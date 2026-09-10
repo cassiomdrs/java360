@@ -7,6 +7,7 @@ public class AlgoritmoTrintaAl {
         for (int i = decremento.length - 1; i >= 0; i--) {
             decremento[i] = i+1;
             calcular = calcular * decremento[i];
+            IO.println("Posição " + (i+1) + " = " + decremento[i]);
         }
         IO.println("Resultado: " + calcular);
     }
