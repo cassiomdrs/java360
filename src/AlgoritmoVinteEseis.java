@@ -4,7 +4,7 @@ public class AlgoritmoVinteEseis {
         int soma = 0;
 
         for (int i = 0; i < numeros.length; i++) {
-            numeros[i] = Integer.parseInt(IO.readln("Entre com o número na pisição " + (i+1) + ": "));
+            numeros[i] = Integer.parseInt(IO.readln("Entre com o número na posição " + (i+1) + ": "));
         }
 
         for (int i = 0; i < numeros.length; i++) {
