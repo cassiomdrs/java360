@@ -2,13 +2,13 @@ public class AlgoritmoTrintaAl {
     public void main () {
         int numeroFatorial = Integer.parseInt(IO.readln("Digite o número que deseja descobrir o fatorial: "));
         int[] decremento = new int [numeroFatorial];
-        int calcular = 1;
+        int valor = numeroFatorial;
 
-        for (int i = decremento.length - 1; i >= 0; i--) {
-            decremento[i] = i+1;
-            calcular = calcular * decremento[i];
-            IO.println("Posição " + (i+1) + " = " + decremento[i]);
+        for (int i = decremento.length - 1; i >= 1; i--) {
+            decremento[i] = valor;
+            valor = i * decremento[i];
+            IO.println("Posição " + (i-1) + ": " + decremento[i] + " * " + i + " = " + valor);
         }
-        IO.println("Resultado: " + calcular);
+        IO.println("Resultado final: O fatorial de " + numeroFatorial + " é " + valor);
     }
 }
