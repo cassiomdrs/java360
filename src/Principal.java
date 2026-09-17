@@ -40,7 +40,7 @@ public class Principal {
         Algoritmo36 alg36 = new Algoritmo36();
         alg36.setHoraVisita(14);
         alg36.setMinutoVisita(30);
-        IO.println("Horário de vista: " + alg36.getHoraVisita() + ":" + alg36.getMinutoVisita() + "h");
+        IO.println("Horário de visita: " + alg36.getHoraVisita() + ":" + alg36.getMinutoVisita() + "h");
         
     }
 }
