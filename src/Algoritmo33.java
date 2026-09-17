@@ -1,13 +1,24 @@
 public class Algoritmo33 {
 
-    public void chave(){
-        int chaveNumero = Integer.parseInt(IO.readln("Digite o número da chave que deseja usar: "));
+    int chave; //atributo
 
-        if(chaveNumero == 7){
-            IO.println("Porta aberta!!!");
+    public void inserirChave(int c){
+        chave = c;
+    }
+
+    //public int retornarChave(){
+    //    return chave;
+    //}
+
+    public String abrirPorta(){
+        String resposta;
+        if(chave == 7){
+            resposta = "A porta verde-água se abre!";
         }
         else {
-            IO.println("Chave errada, porta fechada!!!");
+            resposta = "A porta de cobre se abre!";
         }
+        return resposta;
     }
+
 }
