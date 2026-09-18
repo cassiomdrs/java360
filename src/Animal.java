@@ -1,8 +1,3 @@
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import java.io.File;
-
 public abstract class Animal {
     private String nome;
     private String tocarSom;
