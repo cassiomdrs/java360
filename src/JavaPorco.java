@@ -4,15 +4,15 @@ import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
-public class Gato extends Animal {
-    public Gato(String nome, String tocarSom, String comer) {
+public class JavaPorco extends Animal {
+    public JavaPorco(String nome, String tocarSom, String comer) {
         super(nome, tocarSom, comer);
     }
 
     @Override
     public void arquivoSom() {
         try {
-            File arquivo = new File("src/miado.wav");
+            File arquivo = new File("src/javaporco.wav");
 
             AudioInputStream audio =
                     AudioSystem.getAudioInputStream(arquivo);
@@ -20,7 +20,7 @@ public class Gato extends Animal {
             Clip clip = AudioSystem.getClip();
             clip.open(audio);
 
-            IO.println("Gato miando...");
+            IO.println("Java Porco grunindo...");
 
             clip.start();
 
@@ -36,6 +36,6 @@ public class Gato extends Animal {
 
     @Override
     public void comer() {
-        IO.println("O gato " + getNome() + " come " + getComer() + "\n");
+        IO.println("O Java Porco " + getNome() + " come " + getComer() + "\n");
     }
 }
