@@ -37,7 +37,7 @@ public class Algoritmo39 {
 
             if(op == 1){
             JOptionPane.showMessageDialog(null, o1.calcularTarifa(), TITULO,janelaPadrao);
-            JOptionPane.showMessageDialog(null, "Frota: "+o1.getCont(), TITULO,janelaPadrao);
+            JOptionPane.showMessageDialog(null, "Frota: " + Onibus.getCont(), TITULO,janelaPadrao);
             }
             else if(op == 2){
             JOptionPane.showMessageDialog(null, m1.calcularTarifa(), TITULO,janelaPadrao);
