@@ -13,7 +13,13 @@ public class Algoritmo42 {
         // Primeira voz (Bruno): Interface (Contrato)
         // Segunda voz (Marrone): Classe (Implementa)
 
-        List <String> nomes = new ArrayList<>();
+        //List <String> nomes = new ArrayList<>();
+
+        List <String> linguagens = List.of("Rust", "Python", "GO", "Java", "C", "C++", "C#");
+
+        for (String linguagem:linguagens){
+            IO.println(linguagem);
+        }
 
     }
 }
