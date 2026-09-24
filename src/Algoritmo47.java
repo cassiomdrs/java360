@@ -9,9 +9,8 @@ public class Algoritmo47 {
         for(int i = 0; i < numeros.length; i++){
             //int numeroDigitado = Integer.parseInt(IO.readln("Posição " + (i+1) + " selecionada, digite o número: "));
             
-            int numeroDigitado = Integer.parseInt(JOptionPane.showInputDialog(null, (i + 1) + "º Número = Digite um número:", "Inserir 10 números", JOptionPane.QUESTION_MESSAGE));
+            numeros[i] = Integer.parseInt(JOptionPane.showInputDialog(null, (i + 1) + "º Número = Digite um número:", "Inserir 10 números", JOptionPane.QUESTION_MESSAGE));
 
-            numeros[i] = numeroDigitado;
             soma += numeros[i];
             contador++;
         }
