@@ -34,9 +34,10 @@ public class Algoritmo46 {
 
         IO.println("\nTemos um total de " + frutas.size() + " frutas cadastradas no momento.");
 
-        frutas.remove("Goiaba"); // Remove a fruta
+        frutas.remove("Goiaba"); // Remove a fruta pelo nome exato
+        frutas.remove(2); // Remove a fruta pelo índice
 
-        IO.println("\nHouve uma remoção de uma fruta e agora temos um total de " + frutas.size() + " frutas cadastradas.\n");
+        IO.println("\nHouve remoção de uma fruta e agora temos um total de " + frutas.size() + " frutas cadastradas.\n");
 
         for(String fruta:frutas){
             IO.println(fruta);
