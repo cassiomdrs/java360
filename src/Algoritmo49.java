@@ -3,18 +3,6 @@ import java.util.List;
 
 public class Algoritmo49 {
 
-    /*
-     * String comparaNome = IO.readln("Digite a sala que deseja alterar: ");
-     * 
-     * for(String laboratorio:laboratorios) {
-     * if (String compararNome == laboratorio ){
-     *  IO.println("Alteração feita")
-     * } else {
-     *  IO.println("Sala já registrada")
-     * }
-     * }
-     * 
-     */
     public void main() {
         List<String> laboratorios = new ArrayList<>();
         int opcao = 0;
