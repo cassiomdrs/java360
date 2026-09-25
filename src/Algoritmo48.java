@@ -18,6 +18,11 @@ public class Algoritmo48 {
             {45,67,89}
         };
 
-        IO.println(matrizQuadrada[0][0] + " | " + matrizQuadrada[1][1] + " | " + matrizQuadrada[2][2]);
+        int i = 0;
+        for (int j = 0; j < matrizQuadrada.length; j++){
+            IO.println(matrizQuadrada[i][j]);
+            i++;
+        }
+        
    }
 }
