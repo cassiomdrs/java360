@@ -23,8 +23,8 @@ public class Algoritmo49 {
                     break;
                 case 2:
                     if (laboratorios.size() != 0) {
+                        IO.println("Temos os seguintes laboratórios cadastrados:");
                         for (String laboratorio : laboratorios) {
-                            IO.println("Temos os seguintes laboratórios cadastrados:");
                             IO.println("Sala: " + laboratorio);
                         }
                         
