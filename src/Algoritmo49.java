@@ -35,6 +35,11 @@ public class Algoritmo49 {
                     break;
                 case 2:
                     if (laboratorios.size() != 0) {
+                        for (String laboratorio : laboratorios) {
+                            IO.println("Temos os seguintes laboratórios cadastrados:");
+                            IO.println("Sala: " + laboratorio);
+                        }
+                        
                         String labRemover = IO.readln("Qual o endereço do laboratório que deseja ALTERAR? ");
                         int indice = laboratorios.indexOf(labRemover);
                         String labNovo = IO.readln("Digite o novo endereço do laboratório: ");
