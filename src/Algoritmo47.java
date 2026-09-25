@@ -3,22 +3,14 @@ import javax.swing.JOptionPane;
 public class Algoritmo47 {
     public void main (){
         double[] numeros = new double[10]; // Criei um vetor com capacidade para armazenar 10 números
-        double soma = 0; // Variável soma para receber os valores de cada número digitado
+        double soma = 0; // Variável soma para somar ela mesma mais o valor adicionado a cada loop
 
         for(int i = 0; i < numeros.length; i++){
-            //int numeroDigitado = Integer.parseInt(IO.readln("Posição " + (i+1) + " selecionada, digite o número: "));
-            
             numeros[i] = Integer.parseInt(JOptionPane.showInputDialog(null, (i + 1) + "º Número = Digite um número:", "Inserir 10 números", JOptionPane.QUESTION_MESSAGE));
-
             soma += numeros[i];
         }
         
         double media = soma / numeros.length;
-
-        //IO.println("A SOMA de todos os números inseridos é: " + soma);
-        //IO.println("A MÉDIA dos números é: " + media);
-
         JOptionPane.showMessageDialog(null, "A SOMA de todos os números inseridos é: " + soma + "\nA MÉDIA dos números é: " + media, "Resultado", JOptionPane.WARNING_MESSAGE);
-
     }
 }
