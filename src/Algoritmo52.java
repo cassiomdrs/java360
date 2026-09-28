@@ -7,6 +7,12 @@ public class Algoritmo52 {
     public void main (){
         int r = 0;
         do {
+            try(){
+
+            }
+            catch(Exception e){
+                IO.println(e.getMessage());
+            }
             IO.println("Deseja adicionar uma mensagem?");
             IO.println("Digite 1 [Sim] ou 2 [Não]");
             r = Integer.parseInt(IO.readln());
