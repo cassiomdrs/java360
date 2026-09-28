@@ -28,8 +28,8 @@ public class Algoritmo49 {
                             IO.println("Sala: " + laboratorio);
                         }
                         
-                        String labRemover = IO.readln("Qual o endereço do laboratório que deseja ALTERAR? ");
-                        int indice = laboratorios.indexOf(labRemover);
+                        String labAlterar = IO.readln("Qual o endereço do laboratório que deseja ALTERAR? ");
+                        int indice = laboratorios.indexOf(labAlterar);
                         String labNovo = IO.readln("Digite o novo endereço do laboratório: ");
                         laboratorios.set(indice, labNovo);
                     } else {
@@ -40,8 +40,8 @@ public class Algoritmo49 {
                     break;
                 case 3:
                     if (laboratorios.size() != 0) {
+                        IO.println("Temos os seguintes laboratórios cadastrados:");
                         for (String laboratorio : laboratorios) {
-                            IO.println("Temos os seguintes laboratórios cadastrados:");
                             IO.println("Sala: " + laboratorio);
                         }
                         String labRemover = IO.readln("Qual o sala de laboratório que deseja REMOVER? ");
