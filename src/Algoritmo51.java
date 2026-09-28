@@ -9,16 +9,16 @@ public class Algoritmo51 {
 
             int resultado = numero1 / numero2;
 
-            IO.println("O resultado da divisão de " + numero1 + " por " + numero2 + " é: " + resultado);
+            IO.println("\nO resultado da divisão de " + numero1 + " por " + numero2 + " é: " + resultado);
         }
         catch (ArithmeticException e){
-            IO.println("Não dá para dividir por zero!");
+            IO.println("\nNão dá para dividir por zero!");
         } 
         catch (NumberFormatException e){
-            IO.println("Por favor, digite apenas números!");
+            IO.println("\nPor favor, digite apenas números!");
         } 
         finally{
-            IO.println("Tchau! Desligando...");
+            IO.println("\nTchau! Desligando...");
         };
     }
 }
