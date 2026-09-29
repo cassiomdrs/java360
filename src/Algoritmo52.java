@@ -24,7 +24,7 @@ public class Algoritmo52 {
                 r = Integer.parseInt(IO.readln());
 
             }
-            catch(Exception e){
+            catch(IOException e){
                 IO.println(" Erro ao salvar a sua dúvida: " + e.getMessage());
             }
             
