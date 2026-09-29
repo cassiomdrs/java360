@@ -1,0 +1,2 @@
+[29/09/2026 09:37:13] Se eu mudar a extensão do arquivo ele funciona, ele salva?
+[29/09/2026 09:48:26] Posso printar na tela os dados salvos dentro do arquivo .txt?
