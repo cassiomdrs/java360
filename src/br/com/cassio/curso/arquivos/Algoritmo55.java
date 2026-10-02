@@ -62,23 +62,27 @@ public class Algoritmo55 {
 
         do {
 
-            op = Integer.parseInt(JOptionPane.showInputDialog(null,
+            try{
+                op = Integer.parseInt(JOptionPane.showInputDialog(null,
                     "\n1) Cadastrar" +
-                            "\n2) Listar" +
-                            "\n3) Pesquisar" +
-                            "\n4) Excluir" +
-                            "\n5) Alterar" +
-                            "\n6) Sair" +
-                            "\n\nDigite o número da opção desejada:\n",
+                    "\n2) Listar" +
+                    "\n3) Pesquisar" +
+                    "\n4) Excluir" +
+                    "\n5) Alterar" +
+                    "\n6) Sair" +
+                    "\n\nDigite o número da opção desejada:\n",
                     nomeJanela, JOptionPane.QUESTION_MESSAGE));
+            } catch (NumberFormatException e){
+                JOptionPane.showMessageDialog(null, "Digite apenas números!", nomeJanela,
+                                JOptionPane.ERROR_MESSAGE);
+            }
 
             switch (op) {
                 case 1:
                     String entradaChave = JOptionPane.showInputDialog(null, "Digite nome da chave da sala:",
                             nomeJanela, JOptionPane.QUESTION_MESSAGE);
                     if (entradaChave == null) { // Esse IF serve para verificar se o usuário não digitou nada e fechou a
-                                                // janela, então sai do case 1.
-                        break;
+                        break;                  // janela, então sai do case 1.
                     }
                     String chaveDigitada = entradaChave.toUpperCase();
 
