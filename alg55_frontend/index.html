@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dicionário de Chaves - by Cássio Medeiros</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark d-flex justify-content-center align-items-center vh-100">
+
+    <button type="button" class="btn btn-success p-3 fs-4 fw-bold" data-bs-toggle="modal" data-bs-target="#sistemaModal">Iniciar Sistema</button>
+    
+    <!-- Etapa 1 - Apresentação das opções -->
+    <div class="modal fade" id="sistemaModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Dicionário de Chaves</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5>Qual das opções abaixo deseja acessar?</h5><br>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Selecione...</option>
+                        <option value="1">Cadastrar</option>
+                        <option value="2">Listar</option>
+                        <option value="3">Pesquisar</option>
+                        <option value="4">Excluir</option>
+                        <option value="5">Alterar</option>
+                    </select>   
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary fw-bold">Avançar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Etapa 1 - FIM -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var modalElement = document.getElementById('sistemaModal');
+            var sistemaModal = new bootstrap.Modal(modalElement);
+            sistemaModal.show();
+        });
+    </script>
+
+    <script src="bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
