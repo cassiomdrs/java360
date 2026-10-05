@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 7 - JavaScript</title>
+</head>
+<body>
+    <!--
+        Desafio:
+        Elaborar um programa para pizzaria, o qual leia o valor total de uma conta e quantos clientes vão pagar.
+        Calcule e informe o valor a ser pago por cliente.
+
+    -->
+    <script>
+        const valorConta = prompt("Qual o valor total da sua conta?");
+        const clientes = prompt("Você vai dividir com quantas pessoas?");
+        const valorPorCliente = Number(valorConta) / Number(clientes);
+
+        alert("Valor total da conta: R$ " + valorConta + "\n" + clientes + " Clientes vão dividir a conta." + "\nCada cliente deverá pagar R$ " + valorPorCliente);
+    </script>
+</body>
+</html>

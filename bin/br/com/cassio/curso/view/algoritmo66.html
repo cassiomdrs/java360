@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 9 - JavaScript</title>
+</head>
+<body>
+    <!--
+        Desafio:
+        Elaborar um programa que leia 2 notas de um aluno em uma disciplina e
+        calcule e informe a média das notas.
+
+    -->
+    <script>
+        const nota1 = prompt("Qual sua primeira nota?");
+        const nota2 = prompt("Qual sua segunda nota?");
+        const soma = Number(nota1) + Number(nota2);
+        const media = Number(soma) / 2;
+
+        alert("Nota 1: " + nota1 + "\nNota 2: " + nota2 + "\nMédia: " + media);        
+    </script>
+</body>
+</html>

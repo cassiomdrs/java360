@@ -1,30 +1,124 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciamento de Chaves</title>
     <link href="bootstrap.min.css" rel="stylesheet">
-  </head>
-  <body class="container">
-    <div class="m-1">
-        <h1>Gerenciamento de Chaves</h1>
-        <p>Gerenciamento de chaves cauteladas e Disponíveis.</p>
-    </div>
-        
-    <div class="row m-1 p-3 bg-light text-dark border rounded shadow">
-        <div class="col">
-            <p>Chave: F07</p>
+</head>
+
+<body>
+    <div class="bg-dark">
+
+        <!-- Menu navbar - Início -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary container bg-primary" data-bs-theme="light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">SENAI</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Cadastrar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Alterar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Excluir</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Buscar chave: Ex.: F07"
+                            aria-label="Search" />
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- Menu navbar - Fim -->
+
+        <div class="container bg-light p-3">
+
+            <h1 class="fw-bold">Gerenciamento de Chaves</h1>
+            <p>Gerenciamento de chaves cauteladas e Disponíveis.</p>
+
+            <!-- Linha da chave - Início -->
+            <div class="row mt-4 m-1 p-3 bg-light text-dark border rounded shadow">
+
+                <div class="col">
+                    <p><span class="fw-bold">Chave:</span> F07<br>
+                        Sala de programação</p>
+                </div>
+                <div
+                    class="col bg-danger text-light text-center rounded d-flex align-items-center justify-content-center">
+                    <p class="fw-bold">Em uso</p>
+                </div>
+
+                <p><span class="fw-bold">Responsável:</span><br>
+                    Prof. Rômulo</p>
+            </div>
+            <!-- Linha da chave - Fim -->
+
+            <!-- Linha da chave - Início -->
+            <div class="row mt-4 m-1 p-3 bg-light text-dark border rounded shadow">
+
+                <div class="col">
+                    <p><span class="fw-bold">Chave:</span> B03<br>
+                        Sala de aula padrão</p>
+                </div>
+                <div
+                    class="col bg-success text-light text-center rounded d-flex align-items-center justify-content-center">
+                    <p class="fw-bold">Disponível</p>
+                </div>
+
+                <p><span class="fw-bold">Responsável:</span><br>
+                    Secretaria</p>
+            </div>
+            <!-- Linha da chave - Fim -->
+
+            <!-- Linha da chave - Início -->
+            <div class="row mt-4 m-1 p-3 bg-light text-dark border rounded shadow">
+
+                <div class="col">
+                    <p><span class="fw-bold">Chave:</span> G09<br>
+                        Oficina mecânica</p>
+                </div>
+                <div
+                    class="col bg-success text-light text-center rounded d-flex align-items-center justify-content-center">
+                    <p class="fw-bold">Disponível</p>
+                </div>
+
+                <p><span class="fw-bold">Responsável:</span><br>
+                    Secretaria</p>
+            </div>
+            <!-- Linha da chave - Fim -->
+
+            <!-- Linha da chave - Início -->
+            <div class="row mt-4 m-1 p-3 bg-light text-dark border rounded shadow">
+
+                <div class="col">
+                    <p><span class="fw-bold">Chave:</span> F19<br>
+                        Laboratório - Arquitetura de Computadores</p>
+                </div>
+                <div
+                    class="col bg-success text-light text-center rounded d-flex align-items-center justify-content-center">
+                    <p class="fw-bold">Disponível</p>
+                </div>
+
+                <p><span class="fw-bold">Responsável:</span><br>
+                    Secretaria</p>
+            </div>
+            <!-- Linha da chave - Fim -->
+
         </div>
-        <div class="col bg-danger text-light text-center rounded ">
-            <p class="fw-bold">Em uso</p>
-        </div>
-        <p>Sala de programação</p>
-        <p>Responsável:<br>
-        Prof. Rômulo</p>
     </div>
-        
 
     <script src="bootstrap.bundle.min.js"></script>
-  </body>
+</body>
+
 </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 8 - JavaScript</title>
+</head>
+<body>
+    <!--
+        Desafio:
+        Elaborar um programa para uma loja o qual leia o preço de um produto e informe as opções de pagamento da loja.
+        Calcule e informe o valor para pagamento à vista com 10% de desconto e o valor em 3x.
+
+    -->
+    <script>
+        const produtoTV = prompt("Digite o valor TOTAL da TV:");
+        const desconto = Number(produtoTV) / 100 * 10;
+        const descontoTV = Number(produtoTV) - Number(desconto);
+        const parcelado = Number(produtoTV) / 3;
+
+        alert("Valor da TV: R$ " + produtoTV + "\nÀ vista 10% de desconto: R$ " + descontoTV + "\nParcelamos em 3x sem juros ficando:\nR$ " + parcelado + " por parcela.");        
+    </script>
+</body>
+</html>
