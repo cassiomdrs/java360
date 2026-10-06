@@ -1,0 +1,25 @@
+body {
+    background-color: #0D354F;
+    color: #ffffff;
+}
+
+.caixa {
+    background-color: #ffffff;
+    color: #0D354F;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width: 400px;
+    max-width: 100%;
+}
+
+.botao {
+    background-color: #2287C9;
+    color: #ffffff;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 5px;
+}
