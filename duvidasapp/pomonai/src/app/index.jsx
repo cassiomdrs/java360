@@ -19,14 +19,14 @@ const styles = StyleSheet.create({
     },
 
     text:{
-        fontSize: 20,
+        fontSize: 50,
         color: "#ffffff",
         fontWeight: 'bold'
     },
 
     imagem:{
-        width: 200,
-        height: 50,
+        width: 512,
+        height: 146,
         resizeMode: 'contain'
     }
 })
