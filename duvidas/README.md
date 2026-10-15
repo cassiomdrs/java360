@@ -1,56 +1,60 @@
-# Frontend - Pomonai App (React Native / Expo)
+# Backend - API de Dúvidas (Spring Boot)
 
-Este repositório contém a interface mobile do aplicativo **Pomonai**, desenvolvida em React Native utilizando Expo Router.
+Este repositório contém a API REST desenvolvida em **Java** com **Spring Boot** para o recebimento e processamento das dúvidas enviadas pelo aplicativo mobile.
 
-## 📁 Estrutura do Projeto
+## 📁 Estrutura do Pacote (`br.com.senai.duvidas`)
 
-* `src/app/index.jsx`: Tela principal da aplicação responsável pela interface de envio de dúvidas e comunicação com a API.
+* **`DuvidasApplication.java`**: Classe principal responsável pela inicialização da aplicação Spring Boot.
+* **`DuvidaController.java`**: Controller REST que expõe os endpoints para consumo do aplicativo.
+* **`DadosCadastroDuvida.java`**: DTO (Data Transfer Object) implementado como um `record` para mapeamento da dúvida.
 
-## 🚀 Funcionalidades e Código (`src/app/index.jsx`)
+## 🛠️ Classes e Funcionalidades
 
-### 1. Gerenciamento de Estado
-Utilizamos o hook `useState` do React para controlar o texto digitado pelo usuário no campo de entrada de texto:
-```javascript
-const [duvida, setDuvida] = useState("");
-```
+### 1. `DadosCadastroDuvida.java` (DTO)
+Representa o objeto de transferência de dados recebido no corpo da requisição. Utiliza o recurso de **Record** do Java para imutabilidade e concisão:
+```java
+package br.com.senai.duvidas;
 
-### 2. Envio de Dados via HTTP (`fetch`)
-A função `enviarDuvida` é uma função assíncrona responsável por enviar a dúvida para o servidor back-end local (Spring Boot):
-* **URL do Endpoint:** `http://localhost:8080/duvida`
-* **Método HTTP:** `POST`
-* **Cabeçalho:** `'Content-Type': 'application/json'` para garantir o envio no formato JSON.
-* **Corpo da requisição:** Envia um objeto com a chave `duvida` contendo o valor do estado (`JSON.stringify({ duvida })`).
-* **Tratamento de Feedback:** Exibe alertas nativos com `Alert.alert()` informando o sucesso ou falha no envio.
-
-```javascript
-const enviarDuvida = async () => {
-  try {
-    const response = await fetch('http://localhost:8080/duvida', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ duvida }),
-    });
-
-    Alert.alert("Dúvida enviada com sucesso!");
-  } catch (error) {
-    Alert.alert("Erro ao enviar dúvida");
-  }
+public record DadosCadastroDuvida(String duvida) {
 }
 ```
 
-### 3. Componentes de Interface
-* **`TextInput`:** Campo configurado com `onChangeText={setDuvida}` e `value={duvida}` para atualizar o estado conforme o usuário digita.
-* **`TouchableOpacity`:** Botão clicável customizado com estilos do `StyleSheet` que aciona a função `enviarDuvida` ao ser pressionado (`onPress`).
+### 2. `DuvidaController.java` (REST Controller)
+Classe responsável por escutar e responder às requisições HTTP:
 
-## 🛠️ Como Executar
+* **`@RestController`**: Define a classe como um controlador REST.
+* **`@RequestMapping("/duvida")`**: Define a rota base da API (`/duvida`).
+* **`@CrossOrigin(origins = "http://localhost:8081")`**: Habilita o suporte a CORS para permitir requisições originadas do front-end React Native.
+* **`@GetMapping`**: Método `mostrarDuvida()` para testes simples de requisições GET.
+* **`@PostMapping`**: Método `cadastrar(@RequestBody DadosCadastroDuvida dados)` que recebe o JSON enviado no corpo da requisição POST e imprime o conteúdo no console do servidor.
 
-1. Instale as dependências:
+```java
+package br.com.senai.duvidas;
+
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/duvida")
+@CrossOrigin(origins = "http://localhost:8081")
+public class DuvidaController {
+
+    @GetMapping
+    public String mostrarDuvida() {
+        return "O que é Maven?";
+    }
+
+    @PostMapping
+    public void cadastrar(@RequestBody DadosCadastroDuvida dados) {
+        System.out.println(dados);
+    }
+}
+```
+
+## 🚀 Como Executar
+
+1. Certifique-se de ter o JDK (Java Development Kit) 21 instalado e configurado.
+2. Compile e execute o projeto via terminal/IDE:
    ```bash
-   npm install
+   ./mvnw spring-boot:run
    ```
-2. Inicie o servidor do Expo:
-   ```bash
-   npx expo start
-   ```
+3. O servidor estará rodando na porta `8080` (URL base: `http://localhost:8080/duvida`).
