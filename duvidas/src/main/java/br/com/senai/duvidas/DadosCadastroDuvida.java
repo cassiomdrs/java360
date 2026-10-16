@@ -1,5 +1,5 @@
 package br.com.senai.duvidas;
 
-public record DadosCadastroDuvida(String duvida) {
+public record DadosCadastroDuvida(String texto) {
 
 }
