@@ -3,7 +3,7 @@ import { Alert, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } fro
 
 export default function Index() {
 
-    const [duvida, setDuvida] = useState("");
+    const [texto, setDuvida] = useState("");
     const enviarDuvida = async () => {
         try {
             const response = await fetch('http://localhost:8080/duvida', {
@@ -11,7 +11,7 @@ export default function Index() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ duvida }),
+                body: JSON.stringify({ texto }),
             });
 
             //if (!response.ok) {
@@ -31,7 +31,7 @@ export default function Index() {
             <TextInput
                 style={styles.textInput}
                 placeholder="Digite sua dúvida..."
-                value={duvida}
+                value={texto}
                 onChangeText={setDuvida}
             />
             
