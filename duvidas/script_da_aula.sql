@@ -3,9 +3,9 @@
 -- DML (Inserir, atualizar, deletar, pesquisar dados)
 -- DTL (transaction, transações - salvar operações)
 -- DQL (SELECT - pesquisa)
-DROP DATABASE pomonaidb;
-CREATE DATABASE pomonaidb;
-USE pomonaidb;
-SHOW TABLES;
-SELECT * FROM duvida;
-DESCRIBE duvida;
+DROP DATABASE pomonaidb; -- apagar a tabela
+CREATE DATABASE pomonaidb; -- cria o banco
+USE pomonaidb; -- usa o banco
+SHOW TABLES; -- mostra as tabelas
+DESCRIBE duvida; -- visualiza a tabela
+SELECT * FROM duvida; -- visualiza os dados

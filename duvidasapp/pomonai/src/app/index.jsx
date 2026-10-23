@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Alert, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
 export default function Index() {
 
@@ -14,13 +14,17 @@ export default function Index() {
                 body: JSON.stringify({ texto }),
             });
 
-            //if (!response.ok) {
-            //    throw new Error(`Erro na requisição: ${response.statusText}`);
-            //};
+            // 1. Descomente e ajuste para tratar caso o servidor retorne erro
+            if (response.ok) {
+                alert("Sucesso", "Dúvida enviada com sucesso!");
+                setDuvida("");
+            } else {
+                alert("Erro do servidor: " + response.status);
+            }
 
-            Alert.alert("Dúvida enviada com sucesso!");
         } catch (error) {
-            Alert.alert("Erro ao enviar dúvida");
+            console.error(error);
+            alert("Erro de conexão: " + error.message);
         }
     }
 
@@ -30,6 +34,7 @@ export default function Index() {
             <Text style={styles.text}>Pomonai App</Text>
             <TextInput
                 style={styles.textInput}
+                placeholderTextColor="#727272"
                 placeholder="Digite sua dúvida..."
                 value={texto}
                 onChangeText={setDuvida}
@@ -66,7 +71,7 @@ const styles = StyleSheet.create({
 
     textInput: {
         borderWidth: 1,
-        borderColor: "#cccccc",
+        borderColor: "#ffffff",
         padding: 10,
         margin: 10,
         width: '80%',

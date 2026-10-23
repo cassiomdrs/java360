@@ -5,7 +5,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Column;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 
 // Classe de entidade (Representa uma tabela)
 @Table(name = "duvida")
@@ -17,11 +20,19 @@ public class Duvida {
 
     @Column(columnDefinition = "TEXT")
     private String texto;
+    
+    @Column(name="data_hora")
+    private LocalDateTime dataHora;
 
     public Duvida() {}
 
     public Duvida(DadosCadastroDuvida dados) {
         this.texto = dados.texto();
+    }
+
+    @PrePersist
+    public void prePersist() {
+        this.dataHora = LocalDateTime.now(ZoneId.of("America/Sao_Paulo"));
     }
 
     public Long getId() {
@@ -38,6 +49,14 @@ public class Duvida {
 
     public void setTexto(String texto) {
         this.texto = texto;
+    }
+
+    public LocalDateTime getDataHora() {
+        return dataHora;
+    }
+
+    public void setDataHora(LocalDateTime dataHora) {
+        this.dataHora = dataHora;
     }
 
 }

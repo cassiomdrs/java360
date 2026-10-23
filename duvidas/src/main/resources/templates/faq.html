@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Professor</title>
+</head>
+<body>
+    <h1>FAQ - Frequently Asked Questions</h1>
+    <div class="faq">
+        <details th:each="d : ${duvidas}">
+            <summary th:text="${d.texto}">
+                <p class="info">
+                    Enviada em :<span th:text="${#temporals.format(d.dataHora, 'dd/MM/yyyy HH:mm')}">17/10/2026 09:00</span>
+                </p>
+            </summary>
+        </details>
+        <p th:if="${#lists.isEmpty(duvidas)}">Não existe dúvidas cadastradas no momento</p>
+    </div>
+</body>
+</html>

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 
 
@@ -33,7 +34,9 @@ public class DuvidaController {
     } 
     @PostMapping
     @Transactional
-    public void cadastrar(@RequestBody DadosCadastroDuvida dados){
-        repository.save(new Duvida(dados));
+    public ResponseEntity<Duvida> cadastrar(@RequestBody DadosCadastroDuvida dados){
+        Duvida duvida = new Duvida(dados);
+        repository.save(duvida);
+        return ResponseEntity.ok(duvida);
     }
 }
