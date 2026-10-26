@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -15,6 +15,30 @@
 
         h1 {
             text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .actions-bar {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .btn-pdf {
+            display: inline-block;
+            background: #2563eb;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .btn-pdf:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
         }
 
         .faq {
@@ -45,22 +69,42 @@
             margin: 8px 0 0;
             color: #cfe6ff;
         }
+
+        .btn-danger {
+            background: #e53e3e;
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        .btn-danger:hover {
+            background: #c53030;
+        }
     </style>
 </head>
 
 <body>
     <h1>FAQ Java FullStack</h1>
+
+    <!-- Botão de exportação para PDF -->
+    <div class="actions-bar">
+        <a href="/api/faq/pdf" target="_blank" class="btn-pdf">📄 Baixar FAQ em PDF</a>
+    </div>
+
     <div class="faq">
         <details th:each="d : ${duvidas}">
             <summary th:text="${d.texto}">Texto da dúvida</summary>
             <p class="info">
                 Enviada em
                 <span th:text="${#temporals.format(d.dataHora, 'dd/MM/yyyy HH:mm')}">17/10/2026 09:00</span>
-               
+            </p>
             <p class="resp">Resposta em breve: o professor responde na aula.</p>
             <form th:action="@{/faq/excluir}" method="post">
                 <input type="hidden" name="id" th:value="${d.id}">
-                <button type="submit" class="btn btn-danger btn-sm">🗑️ Excluir</button>
+                <button type="submit" class="btn-danger">🗑️ Excluir</button>
             </form>
         </details>
         <p th:if="${#lists.isEmpty(duvidas)}">Nenhuma dúvida cadastrada ainda.</p>
