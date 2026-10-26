@@ -21,7 +21,7 @@ public class FaqController {
         model.addAttribute("duvidas", repository.findAllByOrderByDataHoraDesc()); // Ajuste também para buscar do repository em vez de passar o model
         return "faq";
     }
-    @PostMapping("*/faq/excluir")
+    @PostMapping("/faq/excluir")
     public String excluir(@RequestParam Long id){
         repository.deleteById(id);
         return "redirect:/faq";

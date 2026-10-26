@@ -58,6 +58,10 @@
                 <span th:text="${#temporals.format(d.dataHora, 'dd/MM/yyyy HH:mm')}">17/10/2026 09:00</span>
                
             <p class="resp">Resposta em breve: o professor responde na aula.</p>
+            <form th:action="@{/faq/excluir}" method="post">
+                <input type="hidden" name="id" th:value="${d.id}">
+                <button type="submit" class="btn btn-danger btn-sm">🗑️ Excluir</button>
+            </form>
         </details>
         <p th:if="${#lists.isEmpty(duvidas)}">Nenhuma dúvida cadastrada ainda.</p>
     </div>
