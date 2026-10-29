@@ -1,1 +1,1 @@
-alter table duvida add column dataHora datetime(6) not null default current_timestamp(6);
+alter table duvida add column data_hora datetime(6) not null default current_timestamp(6);
