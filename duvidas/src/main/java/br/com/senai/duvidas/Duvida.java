@@ -21,6 +21,9 @@ public class Duvida {
     @Column(columnDefinition = "TEXT")
     private String texto;
     
+    @Column(columnDefinition = "TEXT")
+    private String resposta;
+    
     @Column(name="data_hora")
     private LocalDateTime dataHora;
 
