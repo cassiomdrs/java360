@@ -16,7 +16,7 @@ export default function Index() {
 
             // 1. Descomente e ajuste para tratar caso o servidor retorne erro
             if (response.ok) {
-                alert("Sucesso", "Dúvida enviada com sucesso!");
+                alert("Dúvida enviada com sucesso!");
                 setDuvida("");
             } else {
                 alert("Erro do servidor: " + response.status);
