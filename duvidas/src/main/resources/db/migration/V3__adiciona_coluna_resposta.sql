@@ -1,1 +1,1 @@
-alter table duvida add column resposta TEXT not null;
+ALTER TABLE duvida ADD COLUMN resposta TEXT;
