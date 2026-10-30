@@ -7,6 +7,8 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Id;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Column;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.JoinColumn;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 
@@ -26,6 +28,11 @@ public class Duvida {
     
     @Column(name="data_hora")
     private LocalDateTime dataHora;
+
+    // Relacionamento de Muitas Dúvidas para Uma Categoria
+    @ManyToOne
+    @JoinColumn(name = "categoria_id")
+    private Categoria categoria;
 
     public Duvida() {}
 
@@ -54,6 +61,14 @@ public class Duvida {
         this.texto = texto;
     }
 
+    public String getResposta() {
+        return resposta;
+    }
+
+    public void setResposta(String resposta) {
+        this.resposta = resposta;
+    }
+
     public LocalDateTime getDataHora() {
         return dataHora;
     }
@@ -62,4 +77,12 @@ public class Duvida {
         this.dataHora = dataHora;
     }
 
+    // Getters e Setters para a Categoria
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
 }

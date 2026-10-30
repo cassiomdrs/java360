@@ -1,9 +1,11 @@
 package br.com.senai.duvidas;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface CategoriaRepository
-        extends JpaRepository<Categoria, Long> {
+@Repository
+public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
 
     boolean existsByNomeIgnoreCase(String nome);
+
 }

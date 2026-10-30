@@ -70,6 +70,34 @@
             color: #cfe6ff;
         }
 
+        .category-form {
+            margin-top: 12px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        select {
+            padding: 6px;
+            border-radius: 6px;
+            border: 1px solid #4da3ff;
+            background: #0a0d4c;
+            color: #fff;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+
         .btn-danger {
             background: #e53e3e;
             color: #fff;
@@ -97,16 +125,43 @@
     <div class="faq">
         <details th:each="d : ${duvidas}">
             <summary th:text="${d.texto}">Texto da dúvida</summary>
+            
             <p class="info">
-                Enviada em
+                Enviada em 
                 <span th:text="${#temporals.format(d.dataHora, 'dd/MM/yyyy HH:mm')}">17/10/2026 09:00</span>
             </p>
+
+            <!-- Exibe a categoria atual se houver -->
+            <p class="info" th:if="${d.categoria != null}">
+                Categoria: <strong th:text="${d.categoria.nome}">Nome da Categoria</strong>
+            </p>
+            <p class="info" th:if="${d.categoria == null}" style="color: #f6ad55;">
+                Categoria: <em>Não definida</em>
+            </p>
+
             <p class="resp">Resposta em breve: o professor responde na aula.</p>
+
+            <!-- Formulário para atribuir/alterar a categoria da dúvida -->
+            <form class="category-form" th:action="@{/faq/vincular-categoria}" method="post">
+                <input type="hidden" name="duvidaId" th:value="${d.id}">
+                <select name="categoriaId" required>
+                    <option value="" disabled selected>Selecione uma categoria</option>
+                    <option th:each="c : ${categorias}" 
+                            th:value="${c.id}" 
+                            th:text="${c.nome}"
+                            th:selected="${d.categoria != null and d.categoria.id == c.id}">
+                    </option>
+                </select>
+                <button type="submit" class="btn-primary">Salvar Categoria</button>
+            </form>
+
+            <!-- Formulário de exclusão -->
             <form th:action="@{/faq/excluir}" method="post">
                 <input type="hidden" name="id" th:value="${d.id}">
                 <button type="submit" class="btn-danger">🗑️ Excluir</button>
             </form>
         </details>
+        
         <p th:if="${#lists.isEmpty(duvidas)}">Nenhuma dúvida cadastrada ainda.</p>
     </div>
 </body>

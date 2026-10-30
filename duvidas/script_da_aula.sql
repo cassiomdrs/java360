@@ -8,4 +8,6 @@ CREATE DATABASE pomonaidb; -- cria o banco
 USE pomonaidb; -- usa o banco
 SHOW TABLES; -- mostra as tabelas
 DESCRIBE duvida; -- visualiza a tabela
+DESCRIBE categoria;
 SELECT * FROM duvida; -- visualiza os dados
+SELECT * FROM categoria;
